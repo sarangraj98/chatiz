@@ -1,7 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/loginform.css'
-import auth from '../utils/auth'
+import { useAuth } from '../utils/auth-context'
 export default function LoginForm(props) {
+    const {loggedIn} = useAuth()
+    return loggedIn ? <>{props.history.push("/dashboard")}</> : <LoggedData {...props}/>
+}
+
+function LoggedData(props){
+    const {login} = useAuth()
     return (
         <div className="container">
             <div className="card form">
@@ -9,12 +16,10 @@ export default function LoginForm(props) {
                 
                     <input type="text" placeholder="username" />
                     <input type="password" placeholder="password" />
-                    <button onClick={()=>{
-                        auth.login(()=>{
-                            props.history.push("/dashboard")
-                        })
-                    }}>login</button>
-                
+                    <button onClick={()=>{login(()=>{
+                        props.history.push("/dashboard")
+                    })}}>login</button>
+                    <small><Link to="/">Go to home ?</Link></small>
             </div>
         </div>
     )
