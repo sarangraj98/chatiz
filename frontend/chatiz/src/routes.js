@@ -31,7 +31,7 @@ export const AuthenticatedRoutes = () => {
                 <Switch>
                     <Route path="/" exact component={Home}></Route>
                     <Route path="/login" component={LoginForm}></Route>
-                    <Route path="/dashboard" exact component={Dashboard}></Route>
+                    <Route path="/dashboard"  component={Dashboard}></Route>
                 </Switch>
             </Router>
         </>
