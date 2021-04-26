@@ -42,12 +42,12 @@ function HomeDash(props) {
     const { logout } = useAuth();
     return(
         <>
-        {/* <Link to="/">Home</Link><br />
+        <Link to="/">Home</Link><br />
                 <button onClick={() => {
                     logout(() => {
                         props.history.push('/')
                     })
-                }}>LOGOUT</button> */}
+                }}>LOGOUT</button>
         <div className="avatar">
         <img src="https://www.w3schools.com/howto/img_avatar2.png" style={{borderRadius:'501%'}} alt="avatar"/>
         <h3>Hey there !</h3>
