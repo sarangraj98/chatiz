@@ -1,2 +1,2 @@
 # chatiz
-A chat application using JavaScript.......
+A chat application using JavaScript
